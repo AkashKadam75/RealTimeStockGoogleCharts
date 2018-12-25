@@ -40,7 +40,7 @@ class App extends Component {
   handleSubmit = (value) => {
     if(!this.state.stockSymbols.has(value.toUpperCase())){
      axios.get(
-            `/1.0/stock/${value}/price/`
+            `https://api.iextrading.com/1.0/stock/${value}/price/`
           )
           .then(res => {
             const data2 = [value.toUpperCase(), res.data];
